@@ -1,0 +1,1 @@
+﻿Use the keyboard to enter three integers. One of the numbers is unique. The other two are identical. Display the index of the number that is different from the others.
