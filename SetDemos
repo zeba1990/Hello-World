@@ -1,0 +1,31 @@
+import java.util.HashSet;
+import java.util.TreeSet;
+import java.util.Iterator;
+
+public class SetDemos {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//HashSet<String> set = new HashSet<String>();
+		TreeSet<String> set = new TreeSet<String>(); //data alphabetically ordered
+		//adding data
+		set.add("John");
+		set.add("Lesly");
+		set.add("John");
+		set.add("Fulwa");
+		set.add("Amara");
+		set.add("John");
+		
+		System.out.println("contents of set is : "+ set);
+		
+		Iterator<String> itr = set.iterator();
+		while(itr.hasNext()) {
+			String s = itr.next();
+			System.out.println(s);
+		}
+		System.out.println("The size of the set is :"+ set.size());
+		set.remove("John");
+		System.out.println("Now the size of the set is :"+ set.size());
+	}
+
+}
