@@ -1,0 +1,100 @@
+/*
+ * @author Zeba Chawla
+ *
+ */
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+class Student{
+	int roll;
+	String name;
+}
+
+public class ArrazlistDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//list1 can only have String objects
+		ArrayList<String> list1 = new ArrayList<String>();
+		
+		//list2 can have any kind of  objects
+		ArrayList list2 = new ArrayList();
+		Student s1 = new Student();
+		s1.roll = 101;
+		s1.name = "John Sena";
+		
+		list1.add("Dywane");
+		list1.add("Johnson");
+		list1.add("Rock");
+		list1.add("Fiona");
+		
+		list2.add("Mike");
+		list2.add(2.0);
+		list2.add(s1);
+		
+		//Print the lists- prints elements the way we added them to the list
+		System.out.println("--------------Display the contents of the list-----------------");
+		System.out.println();
+		System.out.println("The contents of list1 are : "+list1);
+		
+		System.out.println("The contents of list2 are: "+ list2);
+		System.out.println();
+		System.out.println("-------------Get the specific element from the list------------");
+		System.out.println();
+		
+		//Get the elements from the list
+		String names = list1.get(2);
+		System.out.println("Second element of list1 is : "+ names);
+		
+		Object o = list2.get(2);
+		System.out.println("Second element of list1 is : "+ o);
+		
+		System.out.println();
+		System.out.println("------------Update specific elements of the list------------");
+		System.out.println();
+		
+		list1.set(2, "Lovely");
+		list2.set(1, 'X');
+		System.out.println("Updated contents of list1 are : "+list1);
+		System.out.println("Updated contents of list2 are: "+ list2);
+		
+		//Remove the elements
+		System.out.println();
+		System.out.println("------------Remove specific elements of the list------------");
+		System.out.println();
+		
+		list1.remove(1);
+		list2.removeAll(list2);
+		System.out.println("After removing some contents of list1, the final list is : "+list1);
+		System.out.println("After removing some contents of list2, the final list is : "+list2);
+		
+		//Other Methods
+		System.out.println();
+		System.out.println("------------Few other methods------------");
+		System.out.println();
+		
+		if(list1.contains("Lovely")){
+			System.out.println("List 1 is : "+ list1);
+		}
+		System.out.println("------------iteratrion------------");
+		for(String s:list1) {                   //for(int i=0; i<=list1.size();i++)
+			System.out.println(s);
+		}
+		
+		System.out.println("------------iteratrion using iterator------------");
+		Iterator<String> itr = list1.iterator();
+		//System.out.println(itr.next());
+		//System.out.println(itr.next());
+		System.out.println("------------full iteratrion------------");
+		while(itr.hasNext()) {
+			String s = itr.next();
+			System.out.println(s);
+			if(s.equals("Fiona")) {
+				itr.remove();
+			}
+		}
+		System.out.println("Finally List 1 is : "+ list1);
+	}
+
+}
