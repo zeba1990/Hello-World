@@ -1,0 +1,34 @@
+//Create a HashMap
+
+package com.codegym.task.task08.task0802;
+
+/* 
+HashMap of 10 pairs
+
+*/
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapDemo {
+    public static void main(String[] args) throws Exception {
+        //write your code here
+        HashMap<String, String> hash = new HashMap<String, String>();
+        hash.put("watermelon", "melon");
+        hash.put("banana", "fruit");
+        hash.put("cherry", "fruit");
+        hash.put("pear", "fruit");
+        hash.put("cantaloupe", "melon");
+        hash.put("blackberry", "fruit");
+        hash.put("ginseng", "root");
+        hash.put("strawberry", "fruit");
+        hash.put("iris", "flower");
+        hash.put("potato", "tuber");
+        
+        for(Map.Entry<String, String> var: hash.entrySet()){
+            String key = var.getKey();
+            String value = var.getValue();
+            System.out.println(key+" - "+value);
+        }
+    }
+}
