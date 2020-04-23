@@ -1,0 +1,43 @@
+// remove all persons from map whose salary is less than 500
+
+import java.util.HashMap;
+import java.util.Map;
+
+/* 
+Only for the rich
+
+*/
+
+public class Solution {
+    public static HashMap<String, Integer> createMap() {
+        //write your code here
+        HashMap<String, Integer> person = new HashMap<String, Integer>();
+        person.put("Ant-man", 500);
+        person.put("Black Widow", 50);
+        person.put("Captain America", 200);
+        person.put("Dr. Strange", 300);
+        person.put("Groot", 20);
+        person.put("Hulk", 1000);
+        person.put("Iron Man", 2000);
+        person.put("Spider Man", 600);
+        person.put("Thor", 500);
+        person.put("Wasp", 400);
+        return person;
+    }
+
+    public static void removeItemFromMap(HashMap<String, Integer> map) {
+        //write your code here
+    
+        for(HashMap.Entry<String, Integer> pair : map.entrySet()){
+            if(pair.getValue() < 500){
+                map.remove(pair.getKey());
+                removeItemFromMap(map);
+                break;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
