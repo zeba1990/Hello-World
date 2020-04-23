@@ -1,0 +1,70 @@
+//Map-Check same first and last name
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.HashSet;
+
+/* 
+Census
+
+*/
+
+public class Solution {
+    public static HashMap<String, String> createMap() {
+        //write your code here
+        
+        HashMap<String,String> map = new HashMap<String, String>();
+      
+        map.put("1Ranvir","Singh");
+        map.put("2Ranbir","Kapoor");
+        map.put("3Bobby","Deol");
+        map.put("4Sunny","Deol");
+        map.put("5Salman","Khan");
+        map.put("6Amir","Khan");
+        map.put("7Kareena","KapoorKhan");
+        map.put("8Karishma","Kapoor");
+        map.put("9Karishma","Tanna");
+        map.put("0Bobby","Darling");
+        
+        return map;
+        
+     
+        
+    }
+
+    public static int getSameFirstNameCount(HashMap<String, String> map, String name) {
+        //write your code here
+        int count = 0;
+        
+        for(HashMap.Entry<String, String> ent : map.entrySet()){
+            if(ent.getValue().equalsIgnoreCase(name)){
+                count++;
+            }
+            
+        }
+        
+        return count;
+
+    }
+
+    public static int getSameLastNameCount(HashMap<String, String> map, String lastName) {
+        //write your code here
+        int countlast = 0;
+        
+        for(HashMap.Entry<String, String> entry : map.entrySet()){
+            if(entry.getKey().equals(lastName)){
+                 
+                countlast++;
+            }
+        }
+        
+          
+
+        return countlast;
+
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
